@@ -5,6 +5,7 @@ enum ctrl_layers {
 	_QW,  // Querty
 	_NM, // Numpad and similar
 	_CP, // Caps lock hold
+    _MO, // Mouse stuff (Caps lock + space)
 	_FNC, // RGB, prog and such
 };
 
@@ -63,7 +64,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______, _______, _______, _______, KC_UP  , _______, _______, _______, _______, _______,   _______, _______, _______, \
         _______, _______, _______, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______, _______, \
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,                              _______, \
-        _______, _______, _______,                   _______,                            _______, _______, _______, MO(_FNC),           _______, _______, _______ \
+        _______, _______, _______,                   TT(_MO),                            _______, _______, _______, MO(_FNC),           _______, _______, _______ \
+    ),
+    [_MO] = LAYOUT(
+        TG(_MO), _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,            _______, _______, _______, \
+        _______, _______, _______, _______, _______, _______, _______, _______, KC_ACL0, KC_ACL1, KC_ACL2, _______, _______, _______,   _______, _______, _______, \
+        _______, _______, _______, _______, _______, _______, _______, KC_WH_U, KC_MS_U, KC_WH_L, KC_WH_R, _______, _______, _______,   _______, _______, _______, \
+        _______, _______, _______, _______, _______, _______, KC_WH_D, KC_MS_L, KC_MS_D, KC_MS_R, _______, _______, _______, \
+        _______, _______, _______, _______, _______, _______, KC_BTN1, KC_BTN2, KC_BTN3, _______, _______, _______,                              _______, \
+        _______, _______, _______,                   TG(_MO),                            _______, _______, _______, MO(_FNC),           _______, _______, _______ \
     ),
     [_FNC] = LAYOUT(
         _______, KC_F13,  KC_F14,  KC_F15,  KC_F16,  KC_F17,  KC_F18,  KC_F19,  KC_F20,  KC_F21,  KC_F22,  KC_F23,  KC_F24,             KC_MUTE, _______, _______, \
@@ -110,10 +119,39 @@ void rgb_matrix_indicators_user(void)
         //   rgb_matrix_set_color(93, 0x66, 0x00, 0x00);
 
           // Arrows
-          rgb_matrix_set_color(41, 0xFF, 0xFF, 0xFF);  // up
-          rgb_matrix_set_color(58, 0xFF, 0xFF, 0xFF);  // down
-          rgb_matrix_set_color(57, 0xFF, 0xFF, 0xFF);  // left
-          rgb_matrix_set_color(59, 0xFF, 0xFF, 0xFF);  // right
+          rgb_matrix_set_color(41, 0xAA, 0xFF, 0xAA);  // up
+        //   rgb_matrix_set_color(41, 0xAA, 0xFF, 0xAA);  // up
+          rgb_matrix_set_color(58, 0xAA, 0xFF, 0xAA);  // down
+          rgb_matrix_set_color(57, 0xAA, 0xFF, 0xAA);  // left
+          rgb_matrix_set_color(59, 0xAA, 0xFF, 0xAA);  // right
+
+          rgb_matrix_set_color(79, 0xAA, 0xFF, 0xAA);  // mouse
+
+          break;
+        case _MO:
+        //   rgb_matrix_set_color(93, 0x66, 0x00, 0x00);
+
+          // Arrows
+          rgb_matrix_set_color(41, 0xAA, 0xFF, 0xAA);  // up
+          rgb_matrix_set_color(58, 0xAA, 0xFF, 0xAA);  // down
+          rgb_matrix_set_color(57, 0xAA, 0xFF, 0xAA);  // left
+          rgb_matrix_set_color(59, 0xAA, 0xFF, 0xAA);  // right
+
+          rgb_matrix_set_color(69, 0x00, 0xA0, 0x00); // button 1
+          rgb_matrix_set_color(70, 0x00, 0xA0, 0x00); // button 2
+          rgb_matrix_set_color(71, 0x00, 0xA0, 0x00); // button 3
+
+          rgb_matrix_set_color(40, 0x00, 0x00, 0xA0); // wheel up
+          rgb_matrix_set_color(56, 0x00, 0x00, 0xA0); // wheel down
+
+          rgb_matrix_set_color(42, 0x00, 0x80, 0xA0); // wheel left
+          rgb_matrix_set_color(43, 0x00, 0x80, 0xA0); // wheel right
+
+          rgb_matrix_set_color(24, 0x00, 0xA0, 0x00); // accel 0
+          rgb_matrix_set_color(25, 0xA0, 0xA0, 0x00); // accel 1
+          rgb_matrix_set_color(26, 0xA0, 0x00, 0x00); // accel 2
+
+          rgb_matrix_set_color(79, 0xAA, 0xFF, 0xAA);  // mouse
 
           break;
         case _NM:
