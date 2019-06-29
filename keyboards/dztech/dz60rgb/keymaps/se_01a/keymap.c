@@ -11,6 +11,7 @@ enum ctrl_layers {
     _FN,  // RGB, prog and such
 };
 
+#define TG_NKRO             MAGIC_TOGGLE_NKRO
 #define SE_BKSP LT(_AR, KC_BSPC)
 #define SE_CTRL LCTL_T(KC_BSPC)
 
@@ -68,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_GRV,  DF(_QW), DF(_CM), TG(_AT), TG(_S1), _______, _______, _______, _______, _______, _______, _______, _______,          KC_DEL ,
         _______,          RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, _______, KC_PSCR, KC_SLCK, KC_PAUS, RESET  ,
         KC_CAPS,          RGB_SPI, RGB_SPD, _______, _______, _______, _______, _______, _______, KC_INS , KC_HOME, KC_PGUP, _______,
-        _______,          _______, _______, _______, _______, _______, _______, _______, KC_DEL , KC_END , KC_PGDN,          _______,
+        _______,          _______, _______, _______, _______, _______, TG_NKRO, _______, KC_DEL , KC_END , KC_PGDN,          _______,
         _______, _______,          _______,                   _______,                            _______, _______,          _______, _______
     ),
 

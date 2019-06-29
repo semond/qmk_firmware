@@ -1,6 +1,6 @@
 #pragma once
 
-#define FORCE_NKRO
+// #define FORCE_NKRO
 
 #define MK_3_SPEED
 #define MK_MOMENTARY_ACCEL
