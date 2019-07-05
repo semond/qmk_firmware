@@ -7,6 +7,7 @@ enum ctrl_layers {
     _AT,  // Left aet = right alt, so I can type accents on linux and windows
     _AR,  // Caps lock hold
     _F2,  // Caps + Tab
+    _AH,  // Bottom arrow test
     _MO,  // Mouse stuff + Numpad
     _FN,  // RGB, prog and such
 };
@@ -49,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TT(_MO),          KC_MUTE, _______, _______, _______, _______, _______, KC_PGUP, KC_UP  , _______, _______, _______, _______, _______,
         _______,          KC_MPLY, KC_MSTP, KC_VOLU, _______, _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______, _______,
         _______,          KC_MPRV, KC_MNXT, KC_VOLD, _______, _______, KC_HOME, KC_END , KC_INS , _______, _______,          _______,
-        TG(_AR), _______,          _______,                   _______,                            _______, MO(_F2),          G(_AR), MO(_FN)
+        TG(_AR), _______,          _______,                   _______,                            _______, MO(_F2),          TG(_AR), MO(_FN)
     ),
     [_F2] = LAYOUT_ANSI(
         _______, KC_F13 , KC_F14 , KC_F15 , KC_F16 , KC_F17 , KC_F18 , KC_F19 , KC_F20 , KC_F21 , KC_F22 , KC_F23 , KC_F24 ,          _______,
@@ -57,6 +58,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
         _______,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
         _______, _______,          _______,                   _______,                            _______, _______,          _______, MO(_FN)
+    ),
+    [_AH] = LAYOUT_ANSI(
+    	_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
+    	_______,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+    	_______,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+    	_______,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
+    	_______, _______,          _______,                   _______,      ALGR_T(KC_LEFT), RGUI_T(KC_DOWN), LT(_AR, KC_UP), LT(_FN, KC_RGHT)
     ),
     [_MO] = LAYOUT_ANSI(
         TG(_MO), _______, KC_NLCK, KC_PSLS, KC_PAST, KC_PMNS, _______, _______, _______, _______, _______, _______, _______,          KC_BSPC,
@@ -66,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, KC_KP_0,          KC_PDOT,                   KC_ACL1,                            KC_ACL0, _______,          _______, MO(_FN)
     ),
     [_FN] = LAYOUT_ANSI(
-        KC_GRV,  DF(_QW), DF(_CM), TG(_AT), TG(_S1), _______, _______, _______, _______, _______, _______, _______, _______,          KC_DEL ,
+        KC_GRV,  DF(_QW), DF(_CM), TG(_AT), TG(_S1), TG(_AH), _______, _______, _______, _______, _______, _______, _______,          KC_DEL ,
         _______,          RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, _______, KC_PSCR, KC_SLCK, KC_PAUS, RESET  ,
         KC_CAPS,          RGB_SPI, RGB_SPD, _______, _______, _______, _______, _______, _______, KC_INS , KC_HOME, KC_PGUP, _______,
         _______,          _______, _______, _______, _______, _______, TG_NKRO, _______, KC_DEL , KC_END , KC_PGDN,          _______,
