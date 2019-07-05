@@ -15,13 +15,19 @@ enum ctrl_layers {
 #define SE_BKSP LT(_AR, KC_BSPC)
 #define SE_CTRL LCTL_T(KC_BSPC)
 
+#define SE_ALGR ALGR_T(KC_LEFT)
+#define SE_RGUI RGUI_T(KC_DOWN)
+#define SE__AR  LT(_AR, KC_UP)
+#define SE__FN LT(_FN, KC_RGHT)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_CM] = LAYOUT_60_ansi(
         KC_GESC, KC_1   , KC_2   , KC_3   , KC_4   , KC_5   , KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_MINS, KC_EQL ,          KC_BSPC,
         KC_TAB ,          KC_Q   , KC_W   , KC_F   , KC_P   , KC_G   , KC_J   , KC_L   , KC_U   , KC_Y   , KC_SCLN, KC_LBRC, KC_RBRC, KC_BSLS,
         SE_CTRL,          KC_A   , KC_R   , KC_S   , KC_T   , KC_D   , KC_H   , KC_N   , KC_E   , KC_I   , KC_O   , KC_QUOT, KC_ENT ,
         KC_LSFT,          KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , KC_K   , KC_M   , KC_COMM, KC_DOT , KC_SLSH,          KC_RSFT,
-        TT(_AR), KC_LALT,          KC_LGUI,                   KC_SPC ,                            KC_RALT, KC_RGUI,          TT(_AR), MO(_FN)
+        TT(_AR), KC_LALT,          KC_LGUI,                   KC_SPC ,                            SE_ALGR, SE_RGUI,          SE__AR , SE__FN
+        // TT(_AR), KC_LALT,          KC_LGUI,                   KC_SPC ,                            KC_RALT, KC_RGUI,          TT(_AR), MO(_FN)
     ),
     [_QW] = LAYOUT_60_ansi(
         KC_GESC, KC_1   , KC_2   , KC_3   , KC_4   , KC_5   , KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_MINS, KC_EQL ,          KC_BSPC,
@@ -49,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TT(_MO),          KC_MUTE, _______, _______, _______, _______, _______, KC_PGUP, KC_UP  , _______, _______, _______, _______, _______,
         _______,          KC_MPLY, KC_MSTP, KC_VOLU, _______, _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______, _______,
         _______,          KC_MPRV, KC_MNXT, KC_VOLD, _______, _______, KC_HOME, KC_END , KC_INS , _______, _______,          _______,
-        TG(_AR), _______,          _______,                   _______,                            _______, MO(_F2),          G(_AR), MO(_FN)
+        TG(_AR), _______,          _______,                   _______,                            _______, MO(_F2),          TG(_AR), MO(_FN)
     ),
     [_F2] = LAYOUT_60_ansi(
         _______, KC_F13 , KC_F14 , KC_F15 , KC_F16 , KC_F17 , KC_F18 , KC_F19 , KC_F20 , KC_F21 , KC_F22 , KC_F23 , KC_F24 ,          _______,
