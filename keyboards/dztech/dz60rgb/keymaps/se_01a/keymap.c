@@ -51,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______,          KC_RALT,                   _______,                            _______, _______,          _______, MO(_FN)
     ),
     [_AR] = LAYOUT_ANSI(
-        KC_GRV,  KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  , KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , KC_F11 , KC_F12 ,          KC_DEL ,
+        KC_GRV ,  KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  , KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , KC_F11 , KC_F12 ,          KC_DEL ,
         TT(_MO),          KC_MUTE, _______, _______, _______, _______, _______, KC_PGUP, KC_UP  , _______, _______, _______, _______, _______,
         _______,          KC_MPLY, KC_MSTP, KC_VOLU, _______, _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______, _______,
         _______,          KC_MPRV, KC_MNXT, KC_VOLD, _______, _______, KC_HOME, KC_END , KC_INS , _______, _______,          _______,
@@ -72,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, KC_KP_0,          KC_PDOT,                   KC_ACL1,                            KC_ACL0, _______,          _______, MO(_FN)
     ),
     [_FN] = LAYOUT_ANSI(
-        KC_GRV,  DF(_QW), DF(_CM), TG(_AT), TG(_S1), _______, _______, _______, _______, _______, _______, _______, _______,          KC_DEL ,
+        KC_GRV ,  DF(_QW), DF(_CM), TG(_AT), TG(_S1), _______, _______, _______, _______, _______, _______, _______, _______,          KC_DEL ,
         _______,          RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, _______, KC_PSCR, KC_SLCK, KC_PAUS, RESET  ,
         KC_CAPS,          RGB_SPI, RGB_SPD, _______, _______, _______, _______, _______, _______, KC_INS , KC_HOME, KC_PGUP, _______,
         _______,          _______, _______, _______, _______, _______, TG_NKRO, _______, KC_DEL , KC_END , KC_PGDN,          _______,
