@@ -14,6 +14,7 @@ enum ctrl_layers {
 #define TG_NKRO MAGIC_TOGGLE_NKRO
 #define SE_BKSP LT(_AR, KC_BSPC)
 #define SE_CTRL LCTL_T(KC_BSPC)
+#define SE_MEH  RCTL(LALT(KC_RSFT))  // Still sends RALT !?
 
 #define SE_ALGR ALGR_T(KC_LEFT)
 #define SE_RGUI RGUI_T(KC_DOWN)
@@ -34,14 +35,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB ,          KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   , KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_LBRC, KC_RBRC, KC_BSLS,
         SE_CTRL,          KC_A   , KC_S   , KC_D   , KC_F   , KC_G   , KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, KC_QUOT, KC_ENT ,
         KC_LSFT,          KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH,          KC_RSFT,
-        TT(_AR), KC_LALT,          KC_LGUI,                   KC_SPC ,                            KC_RALT, KC_RGUI,          TT(_AR), MO(_FN)
+        TT(_AR), KC_LALT,          KC_LGUI,                   KC_SPC ,                            SE_ALGR, SE_RGUI,          SE__AR , SE__FN
     ),
     [_S1] = LAYOUT_60_ansi(
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
         _______,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-        SE_BKSP,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        KC_CAPS,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
         _______,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
-        SE_CTRL, _______,          _______,                   _______,                            _______, _______,          _______, MO(_FN)
+        SE_CTRL, _______,          SE_MEH ,                   _______,                            KC_RALT, KC_RGUI,          TT(_AR), MO(_FN)
     ),
     [_AT] = LAYOUT_60_ansi(
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
