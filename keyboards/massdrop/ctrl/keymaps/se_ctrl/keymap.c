@@ -10,6 +10,16 @@ enum ctrl_layers {
 	_FNC, // RGB, prog and such
 };
 
+
+enum combos {
+    CB_DEL
+};
+const uint16_t PROGMEM del_combo[] = {KC_EQL, KC_BSPC, COMBO_END};
+
+combo_t key_combos[COMBO_COUNT] = {
+    [CB_DEL] = COMBO(del_combo, KC_DEL)
+};
+
 enum ctrl_keycodes {
     U_T_AUTO = SAFE_RANGE, // USB Extra Port Toggle Auto Detect / Always Active
     U_T_AGCR,              // USB Toggle Automatic GCR control

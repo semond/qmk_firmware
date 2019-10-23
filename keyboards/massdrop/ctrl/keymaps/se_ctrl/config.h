@@ -20,3 +20,6 @@
 #define MK_W_INTERVAL_1     120
 #define MK_W_OFFSET_2       1
 #define MK_W_INTERVAL_2     20
+
+#define COMBO_COUNT 1
+#define TAPPING_TERM 200
