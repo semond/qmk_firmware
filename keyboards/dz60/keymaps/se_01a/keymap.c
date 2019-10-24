@@ -11,6 +11,15 @@ enum ctrl_layers {
     _FN,  // RGB, prog and such
 };
 
+enum combos {
+    CB_DEL
+};
+const uint16_t PROGMEM del_combo[] = {KC_EQL, KC_BSPC, COMBO_END};
+
+combo_t key_combos[COMBO_COUNT] = {
+    [CB_DEL] = COMBO(del_combo, KC_DEL)
+};
+
 #define TG_NKRO MAGIC_TOGGLE_NKRO
 #define SE_BKSP LT(_AR, KC_BSPC)
 #define SE_CTRL LCTL_T(KC_BSPC)
@@ -42,14 +51,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
         KC_CAPS,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
         _______,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
-        SE_CTRL, _______,          SE_MEH ,                   _______,                            KC_RALT, KC_RGUI,          TT(_AR), MO(_FN)
+        KC_LCTL, _______,          SE_MEH ,                   _______,                            _______, _______,          _______, _______
+        /* SE_CTRL, _______,          SE_MEH ,                   _______,                            KC_RALT, KC_RGUI,          TT(_AR), MO(_FN) */
     ),
     [_AT] = LAYOUT_60_ansi(
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
         _______,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
         _______,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
         _______,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
-        _______, _______,          KC_RALT,                   _______,                            _______, _______,          _______, MO(_FN)
+        _______, _______,          KC_RALT,                   _______,                            _______, _______,          _______, _______
     ),
     [_AR] = LAYOUT_60_ansi(
         KC_GRV ,  KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  , KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , KC_F11 , KC_F12 ,          KC_DEL ,
@@ -73,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, KC_KP_0,          KC_PDOT,                   KC_ACL1,                            KC_ACL0, _______,          _______, MO(_FN)
     ),
     [_FN] = LAYOUT_60_ansi(
-        KC_GRV ,  DF(_QW), DF(_CM), TG(_AT), TG(_S1), _______, _______, _______, _______, _______, _______, _______, _______,          KC_DEL ,
+        KC_GRV , DF(_QW), DF(_CM), TG(_AT), TG(_S1), _______, _______, _______, _______, _______, _______, _______, _______,          KC_DEL ,
         _______,          RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, _______, KC_PSCR, KC_SLCK, KC_PAUS, RESET  ,
         KC_CAPS,          _______, _______, _______, _______, _______, _______, _______, _______, KC_INS , KC_HOME, KC_PGUP, _______,
         _______,          _______, BL_DEC , BL_TOGG, BL_INC , BL_STEP, TG_NKRO, _______, KC_DEL , KC_END , KC_PGDN,          _______,
