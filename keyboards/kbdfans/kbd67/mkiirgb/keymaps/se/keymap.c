@@ -104,8 +104,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 	[_FN] = LAYOUT_65_ansi_blocker( /* Qwerty */
 		KC_GRV  , DF(_QW) , DF(_CM) , TG(_AT) , TG(_S1) , TG(_S2) , _______ , _______ , _______ , _______ , _______ , _______ , _______ , KC_DEL  , KC_LANG2,
-	    _______ , RGB_TOG , RGB_MOD , RGB_HUI , RGB_HUD , RGB_SAI , RGB_SAD , RGB_VAI , RGB_VAD , _______ , KC_PSCR , KC_SLCK , KC_PAUS , RESET   , KC_LANG1,
-		KC_CAPS , _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ ,      EEP_RST ,      KC_HOME ,
+	    RGB_TOG , RGB_MOD , RGB_HUI , RGB_SAI , RGB_VAI , RGB_SPI , _______ , _______ , _______ , _______ , KC_PSCR , KC_SLCK , KC_PAUS , RESET   , KC_LANG1,
+		KC_CAPS , RGB_RMOD, RGB_HUD , RGB_SAD , RGB_VAD , RGB_SPD , _______ , _______ , _______ , _______ , _______ , _______ ,      EEP_RST ,      KC_HOME ,
 	    _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ ,           _______ , KC_END  ,
 	    _______ , _______ , KC_LGUI ,                     _______ ,                               _______ , _______ ,           _______ , _______ , KC_NUBS
     ),
