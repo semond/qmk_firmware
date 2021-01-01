@@ -113,8 +113,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	),
 	[_FN] = LAYOUT( /* Qwerty */
 		KC_GRV  ,           DF(_QW) , DF(_CM) , TG(_AT) , TG(_S1) , TG(_S2) , TG(_G1) , _______ , _______ , _______ , _______ , KC_LANG4, KC_LANG3, KC_INT4 , _______ , _______ ,
-		_______ ,           RGB_TOG , RGB_MOD , RGB_HUI , RGB_SAI , RGB_VAI , RGB_SPI , _______ , _______ , _______ , KC_PSCR , KC_SLCK , KC_PAUS , KC_INT2 ,           KC_HOME ,
-		KC_CAPS ,           _______ , RGB_RMOD, RGB_HUD , RGB_SAD , RGB_VAD , RGB_SPD , _______ , _______ , _______ , _______ , _______ ,         _______   ,           KC_END  ,
+		RGB_TOG ,           RGB_MOD , RGB_HUI , RGB_SAI , RGB_VAI , RGB_SPI , _______ , _______ , _______ , _______ , KC_PSCR , KC_SLCK , KC_PAUS , KC_INT2 ,           KC_HOME ,
+		KC_CAPS ,           RGB_RMOD, RGB_HUD , RGB_SAD , RGB_VAD , RGB_SPD , _______ , _______ , _______ , _______ , _______ , _______ ,         _______   ,           KC_END  ,
 		_______ , _______ , RGB_M_P , RGB_M_G , RGB_M_K , _______ , _______ , _______ , _______ , _______ , _______ , _______ ,        _______ ,    KC_APP  ,           MO(_FN) ,
 		_______ ,           _______ , _______ ,                _______,   _______, _______,                           _______ , _______ , KC_LANG1, KC_LANG2,           KC_NUBS
 	),
